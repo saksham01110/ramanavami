@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Rama Navami Kalyana Mahotsavam — ASBL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #FDF6EC;
+      --bg-card:     #FFFCF5;
+      --saffron:     #E8602C;
+      --saffron-dk:  #C94E1E;
+      --gold:        #C9921A;
+      --gold-lt:     #E8B84B;
+      --gold-pale:   #F5E3B0;
+      --maroon:      #6B1F1F;
+      --maroon-dk:   #4A1010;
+      --charcoal:    #1A1A1A;
+      --body-text:   #3D2B1B;
+      --muted:       #7A5C3E;
+      --border:      #D9B870;
+      --shadow:      rgba(100, 60, 10, 0.12);
+      --header-h:    64px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--charcoal);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--header-h);
+      background: var(--bg);
+      border-bottom: 1px solid var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      gap: 16px;
+    }
+    .header-logos {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .asbl-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+    }
+    .asbl-logo-mark {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+    }
+    .asbl-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--maroon);
+    }
+    .logo-sep {
+      width: 1px;
+      height: 28px;
+      background: var(--border);
+      opacity: 0.5;
+    }
+    .co-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+    .co-brand span {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .header-date {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--body-text);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      background: linear-gradient(135deg, #FDF0D0, #FAE6B0);
+      border: 1px solid var(--gold-lt);
+      border-radius: 100px;
+      padding: 6px 16px;
+    }
+    @media (max-width: 520px) {
+      .site-header { padding: 0 16px; }
+      .asbl-wordmark { font-size: 16px; }
+      .co-brand { display: none; }
+      .header-date { font-size: 11px; padding: 5px 10px; }
+    }
+
+    /* ── HERO — TWO-COLUMN ──────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--header-h));
+      position: relative;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+    }
+
+    /* Mandala watermark behind the whole hero */
+    .hero-mandala-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-mandala-bg svg {
+      width: min(700px, 90vw);
+      height: min(700px, 90vw);
+      opacity: 0.045;
+    }
+
+    /* ── LEFT — FORM COLUMN ─────────────────────────────── */
+    .form-col {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 44px 52px 52px;
+      background: var(--bg);
+    }
+    @media (max-width: 1100px) { .form-col { padding: 44px 32px; } }
+    @media (max-width: 860px)  { .form-col { padding: 40px 24px; } }
+
+    .invite-chip {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--gold);
+      background: linear-gradient(135deg, #FDF0D0, #FAE6B0);
+      border: 1px solid var(--gold-lt);
+      border-radius: 100px;
+      padding: 4px 16px;
+      margin-bottom: 18px;
+      width: fit-content;
+    }
+    .event-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 600;
+      color: var(--maroon);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .event-title em {
+      font-style: italic;
+      color: var(--saffron);
+    }
+    .event-tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* FORM CARD */
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 30px;
+      box-shadow: 0 4px 32px var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--saffron), var(--gold));
+    }
+    @media (max-width: 520px) { .form-card { padding: 24px 18px; } }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+    .input-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: #FFFEF9;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .input-wrap:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 146, 26, 0.13);
+    }
+    .input-prefix {
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--body-text);
+      background: var(--gold-pale);
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      border-right: 1.5px solid var(--border);
+      white-space: nowrap;
+    }
+    .input-wrap input,
+    .input-wrap select {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 12px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px;
+      color: var(--charcoal);
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+    }
+    .input-wrap input::placeholder { color: #B8A48A; }
+    /* standalone select */
+    .select-wrap {
+      position: relative;
+    }
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--gold);
+      pointer-events: none;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+
+    /* Guest stepper */
+    .stepper-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: #FFFEF9;
+      overflow: hidden;
+    }
+    .stepper-wrap:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 146, 26, 0.13);
+    }
+    .stepper-btn {
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: var(--gold-pale);
+      color: var(--maroon);
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .stepper-btn:hover { background: var(--border); }
+    .stepper-val {
+      flex: 1;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--charcoal);
+      font-family: 'Inter', sans-serif;
+    }
+    .stepper-btn.left { border-right: 1.5px solid var(--border); }
+    .stepper-btn.right { border-left: 1.5px solid var(--border); }
+
+    /* OTP area */
+    .otp-area {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+      padding: 16px;
+      background: linear-gradient(135deg, #FDF0D0 0%, #FAE6B0 100%);
+      border: 1px solid var(--gold-lt);
+      border-radius: 10px;
+    }
+    .otp-area.visible { display: flex; }
+    .otp-hint {
+      font-size: 12.5px;
+      color: var(--body-text);
+    }
+    .otp-hint strong { color: var(--maroon); }
+    .otp-input-row {
+      display: flex;
+      gap: 8px;
+    }
+    .otp-digit {
+      width: 44px;
+      height: 50px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--maroon);
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .otp-digit:focus { border-color: var(--saffron); }
+    .otp-resend {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .otp-resend button {
+      background: none;
+      border: none;
+      color: var(--saffron);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+    }
+
+    /* CTA Buttons */
+    .cta-btn {
+      width: 100%;
+      padding: 15px 20px;
+      background: var(--saffron);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 18px rgba(232, 96, 44, 0.30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .cta-btn:hover:not(:disabled) {
+      background: var(--saffron-dk);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(232, 96, 44, 0.38);
+    }
+    .cta-btn:active:not(:disabled) { transform: translateY(0); }
+    .cta-btn:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
+    .cta-btn .btn-arrow { font-size: 18px; line-height: 1; }
+
+    .btn-note {
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Success state */
+    .success-overlay {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px 8px 12px;
+    }
+    .success-overlay.visible { display: flex; }
+    .success-ring {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-lt), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .success-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--maroon);
+      margin-bottom: 10px;
+    }
+    .success-msg {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    /* ── RIGHT — MEDIA PANEL ────────────────────────────── */
+    .media-col {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--maroon-dk) 0%, var(--maroon) 45%, #8B3000 100%);
+      min-height: 480px;
+    }
+    /* On mobile: video panel stacks ABOVE the form */
+    @media (max-width: 860px) {
+      .media-col {
+        order: -1;
+        min-height: auto;
+      }
+    }
+
+    /* Decorative mandala inside media panel */
+    .media-mandala {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .media-mandala svg {
+      width: min(520px, 90%);
+      height: min(520px, 90%);
+      opacity: 0.08;
+    }
+
+    /* ── VIDEO PLACEHOLDER ───────────────────────────────── */
+    .video-placeholder {
+      position: relative;
+      z-index: 2;
+      /* Desktop: 630×642 — slightly portrait */
+      width: 630px;
+      max-width: 92%;
+      aspect-ratio: 630 / 642;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      background: #1A0808;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 36px auto;
+    }
+    @media (max-width: 860px) {
+      .video-placeholder {
+        /* Mobile: 780×486 — landscape */
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 780 / 486;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* Inner gradient overlay */
+    .video-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,48,0,0.18) 0%, transparent 70%),
+        linear-gradient(175deg, #2A0A0A 0%, #5B1A1A 40%, #8B3000 70%, #C94E1E 100%);
+      z-index: 0;
+    }
+    /* Subtle scan-line texture */
+    .video-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.04) 2px,
+        rgba(0,0,0,0.04) 4px
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .video-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+      text-align: center;
+      width: 100%;
+    }
+    .video-mandala-icon {
+      width: 52px;
+      height: 52px;
+      opacity: 0.5;
+      margin-bottom: 4px;
+    }
+    .video-play-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(232, 184, 75, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .video-play-btn:hover {
+      background: rgba(232, 96, 44, 0.3);
+      transform: scale(1.06);
+    }
+    .video-play-btn svg {
+      margin-left: 5px;
+    }
+    .video-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 600;
+      color: #FDF6EC;
+      line-height: 1.3;
+    }
+    .video-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .video-divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(232,184,75,0.5), transparent);
+    }
+    .video-meta {
+      font-size: 12.5px;
+      color: rgba(253, 246, 236, 0.6);
+      letter-spacing: 0.08em;
+    }
+    .video-caption-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      padding: 28px 20px 16px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .video-caption-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .video-mute-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Keep poster-card styles for any fallback */
+    .poster-card {
+      position: relative;
+      z-index: 2;
+      width: min(360px, 88%);
+      aspect-ratio: 3/4;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(175deg, #2A0A0A 0%, #5B1A1A 35%, #8B3000 65%, #C94E1E 100%);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .poster-om {
+      font-size: 36px;
+      color: var(--gold-lt);
+      margin-bottom: 18px;
+      opacity: 0.9;
+      line-height: 1;
+    }
+    .poster-divider-top {
+      width: 60px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, var(--gold-lt), transparent);
+      margin-bottom: 20px;
+    }
+    .poster-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+    .poster-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 3.5vw, 26px);
+      font-weight: 600;
+      color: #FDF6EC;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .poster-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .poster-divider-mid {
+      width: 40px;
+      height: 1px;
+      background: rgba(232, 184, 75, 0.4);
+      margin: 18px auto;
+    }
+    .poster-meta {
+      font-size: 13px;
+      color: rgba(253, 246, 236, 0.78);
+      line-height: 2;
+      font-weight: 500;
+    }
+    .poster-meta strong {
+      color: var(--gold-lt);
+      font-weight: 700;
+    }
+    .poster-divider-btm {
+      width: 60px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, var(--gold-lt), transparent);
+      margin: 18px 0 16px;
+    }
+    .poster-presented {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232, 184, 75, 0.55);
+    }
+
+    /* Decorative corner on poster */
+    .poster-corner {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0.25;
+    }
+    .poster-corner.tl { top: 10px; left: 10px; }
+    .poster-corner.tr { top: 10px; right: 10px; transform: scaleX(-1); }
+    .poster-corner.bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+    .poster-corner.br { bottom: 10px; right: 10px; transform: scale(-1); }
+
+    /* ── DIVIDER ────────────────────────────────────────── */
+    .gold-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+
+    /* ── PROGRAMME SECTION ──────────────────────────────── */
+    .programme-section {
+      padding: 52px 0 60px;
+      background: var(--bg);
+    }
+    .programme-header {
+      padding: 0 32px 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    @media (max-width: 520px) { .programme-header { padding: 0 20px 22px; } }
+    .programme-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 600;
+      color: var(--maroon);
+    }
+    .programme-count {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Horizontal scroll track */
+    .cards-track-outer {
+      position: relative;
+    }
+    .cards-track-outer::before,
+    .cards-track-outer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 48px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .cards-track-outer::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg), transparent);
+    }
+    .cards-track-outer::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg), transparent);
+    }
+    .cards-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 8px 32px 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .cards-track::-webkit-scrollbar { display: none; }
+    @media (max-width: 520px) { .cards-track { padding: 8px 20px 20px; gap: 12px; } }
+
+    .prog-card {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      width: 200px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .prog-card:hover {
+      box-shadow: 0 8px 28px var(--shadow);
+      transform: translateY(-3px);
+      border-color: var(--gold-lt);
+    }
+    .prog-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #FDF0D0, var(--gold-pale));
+      border: 1px solid var(--gold-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .prog-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--maroon);
+      line-height: 1.35;
+    }
+    .prog-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      background: rgba(232, 96, 44, 0.08);
+      border-radius: 100px;
+      padding: 3px 10px;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    .site-footer {
+      background: var(--maroon);
+      color: rgba(253, 246, 236, 0.7);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 13.5px;
+      line-height: 1.9;
+    }
+    .footer-asbl {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold-lt);
+      margin-bottom: 10px;
+    }
+    .footer-sep {
+      width: 48px;
+      height: 1px;
+      background: rgba(232, 184, 75, 0.3);
+      margin: 14px auto;
+    }
+    .site-footer a {
+      color: var(--gold-lt);
+      text-decoration: none;
+    }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ── MISC ────────────────────────────────────────────── */
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    input[type=number] { -moz-appearance: textfield; }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER — sticky, ASBL logo left, date right
+  ══════════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="header-logos">
+      <a class="asbl-logo-link" href="https://asbl.in" target="_blank" rel="noopener">
+        <!-- ASBL logo mark -->
+        <svg class="asbl-logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="34" height="34" rx="7" fill="#6B1F1F"/>
+          <path d="M17 6L26 11V23L17 28L8 23V11Z" stroke="#E8B84B" stroke-width="1.4" fill="none"/>
+          <path d="M17 11L22 14V20L17 23L12 20V14Z" fill="#E8B84B" opacity="0.25"/>
+          <circle cx="17" cy="17" r="2.5" fill="#E8B84B"/>
+        </svg>
+        <span class="asbl-wordmark">ASBL</span>
+      </a>
+      <div class="logo-sep"></div>
+      <div class="co-brand">
+        Kalyana Mahotsavam
+        <span>Presented by</span>
+      </div>
+    </div>
+
+    <div class="header-date">
+      📅&nbsp; Fri, 27 Mar 2026 &middot; 5:30 PM onwards
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO — two-column: form left, media right
+  ══════════════════════════════════════════════════════ -->
+  <main class="hero">
+
+    <!-- Mandala watermark behind both columns -->
+    <div class="hero-mandala-bg" aria-hidden="true">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(250,250)">
+          <g>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(22.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(67.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(112.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(157.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(202.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(247.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(292.5)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(315)"/>
+            <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#C9921A" transform="rotate(337.5)"/>
+          </g>
+          <g>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(11.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(33.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(56.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(78.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(101.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(123.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(146.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(168.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(191.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(213.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(236.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(258.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(281.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(303.75)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(326.25)"/>
+            <ellipse cx="0" cy="-150" rx="13" ry="28" fill="#C9921A" transform="rotate(348.75)"/>
+          </g>
+          <g>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(30)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(150)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(210)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(300)"/>
+            <ellipse cx="0" cy="-85" rx="9" ry="20" fill="#C9921A" transform="rotate(330)"/>
+          </g>
+          <circle cx="0" cy="0" r="240" stroke="#C9921A" stroke-width="0.5" fill="none"/>
+          <circle cx="0" cy="0" r="175" stroke="#C9921A" stroke-width="0.5" fill="none"/>
+          <circle cx="0" cy="0" r="115" stroke="#C9921A" stroke-width="0.5" fill="none"/>
+          <circle cx="0" cy="0" r="50"  stroke="#C9921A" stroke-width="1"   fill="none"/>
+          <circle cx="0" cy="0" r="22"  fill="#C9921A"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ── LEFT: FORM COLUMN ─────────────────────────────── -->
+    <div class="form-col">
+      <span class="invite-chip">You're invited</span>
+
+      <h1 class="event-title">
+        Sri Rama Navami<br/>
+        <em>Kalyana Mahotsavam</em>
+      </h1>
+      <p class="event-tagline">
+        A special evening of devotion, music &amp; culture —<br/>
+        exclusively for the ASBL family.
+      </p>
+
+      <div class="form-card">
+        <!-- ── FORM BODY ─────────────────────────────────── -->
+        <div id="form-body">
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="f-name">Full Name</label>
+            <div class="input-wrap">
+              <input type="text" id="f-name" name="fullName"
+                     placeholder="Your full name" autocomplete="name" required />
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="form-group">
+            <label for="f-mobile">Mobile Number</label>
+            <div class="input-wrap">
+              <span class="input-prefix">+91</span>
+              <input type="tel" id="f-mobile" name="mobile"
+                     placeholder="98765 43210" maxlength="10"
+                     pattern="[6-9][0-9]{9}" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="f-email">Email ID</label>
+            <div class="input-wrap">
+              <input type="email" id="f-email" name="email"
+                     placeholder="you@email.com" autocomplete="email" required />
+            </div>
+          </div>
+
+          <!-- Project + Flat row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-project">Your ASBL Project</label>
+              <div class="input-wrap select-wrap">
+                <select id="f-project" name="project" required>
+                  <option value="" disabled selected>Select project</option>
+                  <option value="Spire">Spire</option>
+                  <option value="Spectra">Spectra</option>
+                  <option value="Springs">Springs</option>
+                  <option value="Loft">Loft</option>
+                  <option value="Broadway">Broadway</option>
+                  <option value="Landmark">Landmark</option>
+                  <option value="Liviano">Liviano</option>
+                  <option value="Lakeside">Lakeside</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-flat">Flat Number</label>
+              <div class="input-wrap">
+                <input type="text" id="f-flat" name="flatNumber"
+                       placeholder="e.g. A-1204" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Guest stepper -->
+          <div class="form-group">
+            <label>Number of family members attending (including you)</label>
+            <div class="stepper-wrap">
+              <button type="button" class="stepper-btn left" id="btn-minus"
+                      aria-label="Decrease guests">&#8722;</button>
+              <span class="stepper-val" id="guest-count">1</span>
+              <button type="button" class="stepper-btn right" id="btn-plus"
+                      aria-label="Increase guests">&#43;</button>
+            </div>
+          </div>
+
+          <!-- OTP area (hidden until Get OTP is clicked) -->
+          <div class="otp-area" id="otp-area">
+            <p class="otp-hint">Enter the 6-digit OTP sent to your mobile number
+              <strong id="otp-mobile-hint"></strong></p>
+            <div class="otp-input-row" id="otp-boxes">
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 1" inputmode="numeric"/>
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 2" inputmode="numeric"/>
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 3" inputmode="numeric"/>
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 4" inputmode="numeric"/>
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 5" inputmode="numeric"/>
+              <input class="otp-digit" type="number" maxlength="1" min="0" max="9"
+                     aria-label="OTP digit 6" inputmode="numeric"/>
+            </div>
+            <p class="otp-resend">
+              Didn't receive it?
+              <button type="button" id="btn-resend">Resend OTP</button>
+              <span id="resend-timer"></span>
+            </p>
+          </div>
+
+          <!-- CTA Button — switches between Get OTP / Register -->
+          <button type="button" class="cta-btn" id="main-cta">
+            <span id="cta-label">Get OTP</span>
+            <span class="btn-arrow" id="cta-arrow">&#10148;</span>
+          </button>
+
+          <p class="btn-note">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 1.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM7 6v4M7 4.5v.5"
+                    stroke="#7A5C3E" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            Your pass details will be shared on email and WhatsApp
+          </p>
+        </div>
+
+        <!-- ── SUCCESS STATE ──────────────────────────────── -->
+        <div class="success-overlay" id="success-overlay">
+          <div class="success-ring">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M6 15l6 6 12-12" stroke="#fff" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="success-title">You're registered!</h2>
+          <p class="success-msg">
+            Your VIP pass is confirmed.<br/>
+            We'll share the details on your email and WhatsApp shortly.<br/><br/>
+            <strong>See you on 27 March 2026</strong> at ASBL RTC x Roads, Hyderabad.
+            <br/><em style="color:var(--saffron)">Jai Siya Ram 🙏</em>
+          </p>
+        </div>
+      </div><!-- /form-card -->
+    </div><!-- /form-col -->
+
+
+    <!-- ── RIGHT: MEDIA PANEL ────────────────────────────── -->
+    <div class="media-col">
+      <!-- Mandala watermark inside media panel -->
+      <div class="media-mandala" aria-hidden="true">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(250,250)">
+            <g>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(0)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(22.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(45)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(67.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(90)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(112.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(135)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(157.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(180)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(202.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(225)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(247.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(270)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(292.5)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(315)"/>
+              <ellipse cx="0" cy="-220" rx="18" ry="38" fill="#E8B84B" transform="rotate(337.5)"/>
+            </g>
+            <circle cx="0" cy="0" r="240" stroke="#E8B84B" stroke-width="0.5" fill="none"/>
+            <circle cx="0" cy="0" r="175" stroke="#E8B84B" stroke-width="0.5" fill="none"/>
+            <circle cx="0" cy="0" r="100" stroke="#E8B84B" stroke-width="0.8" fill="none"/>
+            <circle cx="0" cy="0" r="42"  fill="#E8B84B" opacity="0.4"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Video Placeholder
+           Desktop: 630×642 (aspect-ratio 630/642) — set via CSS
+           Mobile:  780×486 (aspect-ratio 780/486) — set via CSS  -->
+      <div class="video-placeholder" id="video-placeholder" role="region" aria-label="Event video">
+
+        <!-- centred content (play button + title) -->
+        <div class="video-inner">
+          <!-- Small decorative mandala icon -->
+          <svg class="video-mandala-icon" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+            <g transform="translate(26,26)">
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(0)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(45)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(90)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(135)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(180)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(225)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(270)"/>
+              <ellipse cx="0" cy="-20" rx="4" ry="8"  fill="#E8B84B" transform="rotate(315)"/>
+              <circle cx="0" cy="0" r="22" stroke="#E8B84B" stroke-width="0.6" fill="none"/>
+              <circle cx="0" cy="0" r="6"  fill="#E8B84B" opacity="0.6"/>
+            </g>
+          </svg>
+
+          <!-- Play button -->
+          <button class="video-play-btn" aria-label="Play event video" type="button">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M8 5.5L17 11L8 16.5V5.5Z" fill="#FDF6EC"/>
+            </svg>
+          </button>
+
+          <!-- Event title -->
+          <div class="video-divider"></div>
+          <h2 class="video-title">
+            Sri Rama Navami<br/>
+            <em>Kalyana Mahotsavam</em>
+          </h2>
+          <p class="video-meta">27 March 2026 &nbsp;·&nbsp; ASBL RTC x Roads</p>
+        </div>
+
+        <!-- Bottom caption bar — matches original page style -->
+        <div class="video-caption-bar">
+          <p class="video-caption-text">
+            Sri Sita Rama Kalyanam &nbsp;&middot;&nbsp; Sunitha Garu &amp; Team
+          </p>
+          <div class="video-mute-btn" aria-label="Toggle mute">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 5.5h2.5L8 3v10L4.5 10.5H2V5.5z" fill="rgba(255,255,255,0.7)"/>
+              <path d="M10 5.5c1 .8 1.5 1.5 1.5 2.5s-.5 1.7-1.5 2.5" stroke="rgba(255,255,255,0.7)"
+                    stroke-width="1.2" stroke-linecap="round" fill="none"/>
+              <path d="M12 3.5c1.5 1.2 2.5 2.7 2.5 4.5s-1 3.3-2.5 4.5" stroke="rgba(255,255,255,0.5)"
+                    stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+        </div>
+
+      </div><!-- /video-placeholder -->
+    </div><!-- /media-col -->
+
+  </main><!-- /hero -->
+
+
+  <!-- ══════════════════════════════════════════════════════
+       GOLD DIVIDER
+  ══════════════════════════════════════════════════════ -->
+  <div class="gold-divider"></div>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       PROGRAMME SECTION — replaces "Suggested"
+  ══════════════════════════════════════════════════════ -->
+  <section class="programme-section" aria-label="Evening programme">
+    <div class="programme-header">
+      <h2 class="programme-heading">Evening Programme</h2>
+      <span class="programme-count">7 performances</span>
+    </div>
+
+    <div class="cards-track-outer">
+      <div class="cards-track" role="list">
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#x1FA94;</div>
+          <p class="prog-name">Sitaramula Kalyan</p>
+          <span class="prog-tag">Ceremony</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#127925;</div>
+          <p class="prog-name">Singer Sunitha Musical Performance</p>
+          <span class="prog-tag">Live Music</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#x1F681;</div>
+          <p class="prog-name">Drone Show on Ramayanam</p>
+          <span class="prog-tag">Spectacular</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#128131;</div>
+          <p class="prog-name">Nritya Priya Performance</p>
+          <span class="prog-tag">Classical Dance</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#x1F64F;</div>
+          <p class="prog-name">Ramachari Team Performance</p>
+          <span class="prog-tag">Devotional</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#127914;</div>
+          <p class="prog-name">Ramayanam Drama</p>
+          <span class="prog-tag">Drama</span>
+        </article>
+
+        <article class="prog-card" role="listitem">
+          <div class="prog-icon">&#127926;</div>
+          <p class="prog-name">Bhajan Jamming</p>
+          <span class="prog-tag">Devotional</span>
+        </article>
+
+      </div><!-- /cards-track -->
+    </div><!-- /cards-track-outer -->
+  </section>
+
+  <div class="gold-divider"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-asbl">ASBL</div>
+    <p>Presented by ASBL &middot; In support of Saryu Foundation for Akhand Bharath</p>
+    <div class="footer-sep"></div>
+    <p>For queries: <a href="mailto:contact@saryufoundation.org">contact@saryufoundation.org</a></p>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       JAVASCRIPT — OTP flow + stepper + validation
+  ══════════════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    /* ── DOM refs ─────────────────────────── */
+    const ctaBtn       = document.getElementById('main-cta');
+    const ctaLabel     = document.getElementById('cta-label');
+    const ctaArrow     = document.getElementById('cta-arrow');
+    const otpArea      = document.getElementById('otp-area');
+    const otpMobileHint= document.getElementById('otp-mobile-hint');
+    const otpDigits    = Array.from(document.querySelectorAll('.otp-digit'));
+    const formBody     = document.getElementById('form-body');
+    const successOverlay = document.getElementById('success-overlay');
+    const btnMinus     = document.getElementById('btn-minus');
+    const btnPlus      = document.getElementById('btn-plus');
+    const guestCount   = document.getElementById('guest-count');
+    const btnResend    = document.getElementById('btn-resend');
+    const resendTimer  = document.getElementById('resend-timer');
+    const mobileInput  = document.getElementById('f-mobile');
+
+    /* ── State ───────────────────────────── */
+    let step  = 'otp';   // 'otp' | 'verify' | 'done'
+    let guests = 1;
+    let resendInterval = null;
+
+    /* ── Stepper ─────────────────────────── */
+    btnMinus.addEventListener('click', () => {
+      if (guests > 1) { guests--; guestCount.textContent = guests; }
+    });
+    btnPlus.addEventListener('click', () => {
+      if (guests < 10) { guests++; guestCount.textContent = guests; }
+    });
+
+    /* ── Field validation ────────────────── */
+    function getFields() {
+      return {
+        name:    document.getElementById('f-name'),
+        mobile:  mobileInput,
+        email:   document.getElementById('f-email'),
+        project: document.getElementById('f-project'),
+        flat:    document.getElementById('f-flat'),
+      };
+    }
+    function validateAll() {
+      const f = getFields();
+      let ok = true;
+      Object.values(f).forEach(el => {
+        if (!el.value.trim()) {
+          el.closest('.input-wrap').style.borderColor = 'var(--saffron)';
+          ok = false;
+        } else {
+          el.closest('.input-wrap').style.borderColor = '';
+        }
+      });
+      // mobile length check
+      if (f.mobile.value.replace(/\s/g,'').length < 10) {
+        f.mobile.closest('.input-wrap').style.borderColor = 'var(--saffron)';
+        ok = false;
+      }
+      return ok;
+    }
+
+    /* clear red on input */
+    document.querySelectorAll('.input-wrap input, .input-wrap select').forEach(el => {
+      el.addEventListener('input', () => {
+        el.closest('.input-wrap').style.borderColor = '';
+      });
+    });
+
+    /* ── Resend timer ────────────────────── */
+    function startResendTimer(secs) {
+      btnResend.disabled = true;
+      let remaining = secs;
+      resendTimer.textContent = ` (${remaining}s)`;
+      resendInterval = setInterval(() => {
+        remaining--;
+        resendTimer.textContent = remaining > 0 ? ` (${remaining}s)` : '';
+        if (remaining <= 0) {
+          clearInterval(resendInterval);
+          btnResend.disabled = false;
+        }
+      }, 1000);
+    }
+
+    btnResend.addEventListener('click', () => {
+      clearInterval(resendInterval);
+      otpDigits.forEach(d => d.value = '');
+      otpDigits[0].focus();
+      startResendTimer(30);
+      // TODO: call resend OTP API here
+    });
+
+    /* ── OTP digit auto-advance ──────────── */
+    otpDigits.forEach((digit, i) => {
+      digit.addEventListener('input', () => {
+        // Allow only single digit
+        if (digit.value.length > 1) digit.value = digit.value.slice(-1);
+        if (digit.value && i < otpDigits.length - 1) {
+          otpDigits[i + 1].focus();
+        }
+        // Auto-verify when all filled
+        if (otpDigits.every(d => d.value !== '')) {
+          setTimeout(verifyOTP, 300);
+        }
+      });
+      digit.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !digit.value && i > 0) {
+          otpDigits[i - 1].focus();
+        }
+      });
+      digit.addEventListener('focus', () => digit.select());
+    });
+
+    /* ── Main CTA handler ────────────────── */
+    ctaBtn.addEventListener('click', () => {
+      if (step === 'otp') {
+        sendOTP();
+      } else if (step === 'verify') {
+        verifyOTP();
+      }
+    });
+
+    function sendOTP() {
+      if (!validateAll()) return;
+
+      ctaBtn.disabled = true;
+      ctaLabel.textContent = 'Sending OTP…';
+      ctaArrow.style.display = 'none';
+
+      // Mask mobile number for hint
+      const mob = mobileInput.value.replace(/\s/g,'');
+      otpMobileHint.textContent = '+91 ' + mob.slice(0,2) + 'XXXXX' + mob.slice(-3);
+
+      // Simulate API call — replace with real endpoint
+      setTimeout(() => {
+        ctaBtn.disabled = false;
+        otpArea.classList.add('visible');
+        otpDigits[0].focus();
+        startResendTimer(30);
+        step = 'verify';
+        ctaLabel.textContent = 'Register';
+        ctaArrow.style.display = '';
+        // TODO: call GET OTP API here
+      }, 1000);
+    }
+
+    function verifyOTP() {
+      const otp = otpDigits.map(d => d.value).join('');
+      if (otp.length < 6) {
+        otpDigits.forEach(d => {
+          if (!d.value) d.style.borderColor = 'var(--saffron)';
+        });
+        return;
+      }
+
+      ctaBtn.disabled = true;
+      ctaLabel.textContent = 'Registering…';
+      ctaArrow.style.display = 'none';
+
+      // Simulate verification + registration — replace with real endpoint
+      setTimeout(() => {
+        step = 'done';
+        formBody.style.display = 'none';
+        successOverlay.classList.add('visible');
+        // TODO: call verify OTP + register API here
+      }, 1200);
+    }
+  })();
+  </script>
+</body>
+</html>
